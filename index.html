@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Búsqueda gatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Búsqueda de fotos de gatos</h3>
+
+    <label for="categoria">Selecciona una categoria </label>
+    <select id="categoria">
+        <option value="none">none</option>
+    </select>
+
+    <label for="limit">Limit</label>
+    <select id="limit">
+        <option value="none">Aleatorio</option>
+    </select>
+
+    <label for="raza">Raza</label>
+    <select name="raza" id="raza">
+        <option value="none">All breeds</option>
+
+
+    </select>
+
+    <button id="buscar">Search</button>
+
+    <ul id="resultado"></ul>
+
+    <section class="paginacion">
+        <ul id="pags" style="display:none;">
+            <li>
+                <a href="#" id="principio"> << </a>
+            </li>
+            <li>
+                <a href="#" id="anterior"> < </a>
+            </li>
+            <li><a href="#" class="active" id="valor">1</a></li>
+            <li><a href="#" id="siguiente">></a></li>
+            <li><a href="#" id="final">>></a></li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body></html>
