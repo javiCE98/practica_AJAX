@@ -157,7 +157,6 @@ function obtenerDatos(){
                     for(let i=1;i<=8;i++){
                         if(limit.value==i){
                             limite=i;
-                            alert("Limite: "+limite);
                             var url = "https://api.thecatapi.com/v1/images/search?limit="+limite+"&category_ids="+id+"&page="+valor.innerHTML+"&breed_ids="+razaID;
                         }
                     }
