@@ -16,4 +16,4 @@ Partes:
 
 URL del repositorio de Github->https://github.com/javiCE98/practica_AJAX
 URL de la página en Github pages->https://javice98.github.io/practica_AJAX/index.html
-URL del servidor github json-server para las categorías->
+URL del servidor github json-server para las categorías->https://my-json-server.typicode.com/javiCE98/practica_AJAX/
