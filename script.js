@@ -109,11 +109,11 @@ window.addEventListener("load",function(){
 
 window.addEventListener("load",function(){
     //let url = `https://api.thecatapi.com/v1/categories`;
-    let url="https://my-json-server.typicode.com/javiCE98/practica_AJAX_galeria_imagenes/db";
+    let url="https://my-json-server.typicode.com/javiCE98/practica_AJAX/categorias";
 
     
     const api = new XMLHttpRequest();
-    api.open('GET', url, true);
+    api.open('GET', "https://my-json-server.typicode.com/javiCE98/practica_AJAX/categorias", true);
     api.send();
     
     api.onreadystatechange = function(){
@@ -249,43 +249,29 @@ function obtenerDatos(){
 
             }
         }
-    return new Promise(function(resolve,reject){
-    const api = new XMLHttpRequest();
-    api.open('GET', url, true);
-    api.send();
-    
-    api.onreadystatechange = function(){
-        if (this.status == 200 && this.readyState == 4){
-            
 
-            let datos = JSON.parse(this.responseText);
-            console.log(datos);
-            
-            resultado.innerHTML="";
-
-            for(let item of datos) {                
+        const api = new XMLHttpRequest();
+        api.open('GET', url, true);
+        api.send();
+        
+        api.onreadystatechange = function(){
+            if (this.status == 200 && this.readyState == 4){
+                let datos = JSON.parse(this.responseText);
+                console.log(datos);
                 
-                resultado.innerHTML += `<img width='300px' height='200px' src='${item.url}'>`;
-
+                resultado.innerHTML="";
+    
+                for(let item of datos) {                
+                    
+                    resultado.innerHTML += `<img width='300px' height='200px' src='${item.url}'>`;
+    
+                }
+                
             }
-            resolve(resultado.innerHTML);
         }
-        else{
-            reject("ERROR: "+api.status);
-        }
-    }
-});
+    
 
-var miPromesa=obtenerDatos();
 
-miPromesa
-.then(function correcto(){
-    console.log("Imágenes cargadas de forma correcta");
-})
-
-.catch(function incorrecto(){
-    console.log("Las imágenes no se han podido cargar");
-})
 
 }
 
